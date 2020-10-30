@@ -1,0 +1,70 @@
+﻿@model List<Leilao.Models.Util.ProductBid>
+@{
+    ViewBag.Title = "Index";
+}
+<section>
+
+    <h2><b>Todas ofertas</b></h2>
+    <div class="line-purple"></div>
+
+
+    <form id="index" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="row">
+            <div class="col-sm-3 font-black">
+                Filtrar lances feitos por:
+                @Html.DropDownList("UserId")
+
+            </div>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="content-bid">
+                <div class="product-bid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img style="background-image: url('../Content/img/houses/@(item.Id).jpg');" class="img-item" />
+                        </div>
+                        <div class="col-md-5">
+                            <h3  class="mb-0"><b>@item.Product</b></h3>
+                            <p>
+                                <span class="font-gray">
+                                    Valor Mínimo:
+                                </span>
+                                <span class="value-min">R$ @item.Value</span>
+                            </p>
+                            <p class="font-gray font12">Ultimos lances: </p>
+                            @foreach (var bid in item.lstBid)
+                            {
+                                <div class="item-bid">
+                                    <span class="font-black font15">R$ @bid.Value</span>
+                                    <span class="name-user"> - @bid.UserName</span>
+                                </div>
+                            }
+                            @if (item.lstBid.Count() == 0)
+                            {
+                                <p class="font-gray">Seja o primeiro a dar um lance! </p>
+                            }
+                        </div>
+                        <div class="col-md-3 div-bid">
+                            @*<a class="btn-bid" onclick="OpenBid(@item.Id)">Dar um lance</a>*@
+                            @Html.ActionLink("Dar um lance", "Create", "Auction", new { productId = item.Id }, new { @class = "btn-bid" })
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if(Model.Count == 0)
+        {
+            <a href="@Url.Action("Create", "Product")"><p  class="warning" style="background:#afafaf">Nenhum Leilão iniciado. Anuncie uma casa!</p></a>
+        }
+
+    </form>
+</section>
+
+<script>
+    $("#UserId").change(function () {
+        $('#index').submit();
+    });
+
+</script>

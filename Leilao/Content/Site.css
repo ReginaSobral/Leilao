@@ -1,0 +1,228 @@
+﻿body {
+    padding-bottom: 20px;
+    height: 100%;
+    background-color: #F8F8F8;
+}
+* {
+    font-family: 'Varela Round', sans-serif;
+}
+
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+h2 {
+    color: #5233d3;
+    margin-top: 25px;
+}
+
+header {
+    margin-top: 30px;
+}
+
+.logo{
+    max-width: 125px
+}
+
+.line-purple {
+    height: 15px;
+    background-color: #5234d4;
+    width: 100px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+select {
+    padding: 5px 20px;
+    border-radius: 10px;
+    border-color: #dedede;
+    margin-bottom: 20px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+.mt20 {
+    margin-top: 20px
+}
+
+.brand {
+    font-size: 25px
+}
+.mb0{
+    margin-bottom: 0;
+}
+
+.font12 {
+    font-size: 12px
+}
+.font15 {
+    font-size: 15px
+}
+
+.warning {
+    background: #ff7070;
+    color: white;
+    width: fit-content;
+    font-size: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.btn-send {
+    background-color: #5234d4;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+input {
+    max-width: 500px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #cecece;
+}
+
+.input-login, .input-register {
+    max-width: 500px;
+    width: 100%;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 20px;
+    color: black
+}
+
+label {
+    display: block;
+}
+
+.bg-login {
+    background: #5234D4;
+    color: white;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.item-menu {
+    font-size: 20px;
+    color: #797979;
+}
+
+.container-login {
+    height: 98%;
+    padding: 10% 37%;
+    text-align: center;
+}
+
+.btn-login, .btn-register {
+    background-color: #3cd6ff;
+    border: none;
+    border-radius: 7px;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px 100px;
+}
+
+.item-list {
+    width: 20%;
+}
+
+.name-user {
+    color: #4ad9ff;
+    padding: 2px 10px;
+    font-weight: bold;
+}
+
+.navbar-inverse {
+    background-color: #F6861F;
+    border-color: #080808;
+}
+
+    .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
+        color: white
+    }
+
+.font-gray {
+    color: #969696
+}
+
+.font-black {
+    color: #5f5f5f;
+    font-weight: bold
+}
+h3 {
+    font-size: 30px;
+    color: #0e0924
+}
+
+footer {
+    padding: 10px 0;
+    bottom: 0;
+}
+
+.img-item {
+    height: 200px;
+    width: 250px;
+    background-size: cover;
+    border-radius: 10px;
+    margin: 20px 10px;
+}
+.value-min {
+    color:#5234d4 
+}
+
+.product-bid {
+    width: 100%;
+    border: 1px solid #d0d0d0;
+    background-color: white;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 1em #d0d0d0;
+}
+
+.btn-bid {
+    padding: 10px 20px;
+    color: #5234d4;
+    font-weight: bold;
+    font-size: 20px
+}
+
+    .btn-bid:hover {
+        text-decoration: underline;
+        color: #5234d4;
+    }
+
+.div-bid {
+    display: flex;
+    align-items: center;
+    height: 200px;
+}
+
+.content-bid {
+    margin-bottom: 15px;
+    display: flex
+}
+
+.item-bid {
+    display: flex;
+    padding: 2px 0;
+}

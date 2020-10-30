@@ -1,0 +1,75 @@
+CREATE DATABASE [Leilao]
+GO
+
+USE [Leilao]
+GO
+
+/****** Object:  Table [dbo].[Product]    Script Date: 30/10/2020 06:43:00 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Product](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](100) NULL,
+	[Value] [decimal](18, 2) NULL,
+ CONSTRAINT [PK_Product] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[UserSistem](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](150) NOT NULL,
+	[Age] [int] NULL,
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+/****** Object:  Table [dbo].[AuctionBid]    Script Date: 30/10/2020 06:42:46 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[AuctionBid](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Value] [decimal](18, 2) NULL,
+	[ProductId] [int] NULL,
+	[UserId] [int] NULL,
+	[Date] [datetime] NULL,
+ CONSTRAINT [PK_AuctionBid] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[AuctionBid]  WITH CHECK ADD  CONSTRAINT [FK_AuctionBid_AuctionBid] FOREIGN KEY([UserId])
+REFERENCES [dbo].[UserSistem] ([Id])
+GO
+
+ALTER TABLE [dbo].[AuctionBid] CHECK CONSTRAINT [FK_AuctionBid_AuctionBid]
+GO
+

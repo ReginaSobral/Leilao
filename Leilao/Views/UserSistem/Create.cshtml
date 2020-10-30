@@ -1,0 +1,62 @@
+﻿@model Leilao.Models.UserSistem
+@{
+    ViewBag.Title = "Cadastro Usuario";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - leilão</title>
+    <link rel="shortcut icon" type="image/png" href="~/Content/img/logo.png">
+    @Styles.Render("~/Content/css")
+
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <section class="container-login bg-login ">
+        <img src="~/Content/img/logo.png" class="logo"/>
+        <h1>LeiloaCasa</h1><br>
+        <p class="text-center">Cadastre-se</p>
+        <form id="form1" method="post" enctype="application/x-www-form-urlencoded">
+
+            <div>
+                @Html.TextBoxFor(u => u.Name, new { @class = "input-register", placeholder = "Seu nome, ex: João da Silva" })
+            </div>
+            <div>
+                @Html.TextBoxFor(u => u.Age, new { @class = "input-register", placeholder = "Sua idade, ex: 23", type="number" })
+            </div>
+            @if (TempData["Error"] != null && TempData["Error"] != "")
+            {
+                <div class="warning"> @TempData["Error"] </div>
+            }
+
+            <div>
+                <input type="submit" value="Cadastrar" class="btn-register" />
+            </div>
+        </form>
+    </section>
+    <div class="container">
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Criado por Regina Sobral</p>
+        </footer>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.maskMoney.js"></script>
+    <script src="~/Scripts/jquery.maskedinput.min.js"></script>
+    <script>
+        $(".money").maskMoney({
+            allowZero: true,
+            thousands: '',
+            decimal: ',',
+            precision: 2,
+            affixesStay: false
+        });
+    </script>
+</body>
+</html>

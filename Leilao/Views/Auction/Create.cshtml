@@ -1,0 +1,28 @@
+﻿@model Leilao.Models.AuctionBid
+@{
+    /**/
+
+    ViewBag.Title = "Novo Lance";
+}
+<section>
+    <h2><b>Dê seu lance!</b></h2>
+    <div class="line-purple"></div>
+    <form id="form1" method="post" enctype="application/x-www-form-urlencoded">
+
+        @Html.HiddenFor(a => a.Id)
+        <div>
+            @Html.LabelFor(a => a.Value)
+            @Html.TextBoxFor(a => a.Value, new { @class = "money" })
+        </div>
+
+
+        @if (TempData["Error"] != null && TempData["Error"] !="")
+        {
+            <div class="warning"> @TempData["Error"] </div>
+        }
+
+        <div>
+            <input type="submit" class="btn-send" value="Enviar lance" />
+        </div>
+    </form>
+</section>

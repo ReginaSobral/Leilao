@@ -1,0 +1,32 @@
+﻿@model Leilao.Models.Product
+@{
+    /**/
+
+    ViewBag.Title = "Create";
+}
+
+<section>
+    <h2><b>Anunciar Casa</b></h2>
+    <div class="line-purple"></div>
+    <form id="form1" method="post" enctype="application/x-www-form-urlencoded">
+
+        <div>
+            @Html.LabelFor(p => p.Name)
+            @Html.TextBoxFor(p => p.Name)
+        </div>
+        <div>
+            @Html.LabelFor(p => p.Value)
+            @Html.TextBoxFor(p => p.Value, new { @class = "money" })
+        </div>
+
+
+        @if (TempData["Error"] != null && TempData["Error"] != "")
+        {
+            <div class="warning"> @TempData["Error"] </div>
+        }
+
+        <div>
+            <input type="submit" value="Anunciar" class="btn-send" />
+        </div>
+    </form>
+</section>
